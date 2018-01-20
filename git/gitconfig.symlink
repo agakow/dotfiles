@@ -23,3 +23,5 @@
   interactive = auto
   diff = auto
   ui = true
+[include]
+  path = ~/.gitconfig.local
