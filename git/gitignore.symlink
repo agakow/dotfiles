@@ -1,0 +1,8 @@
+.DS_Store
+.Trashes
+
+# Git credential file
+.gitconfig.local
+
+# npm
+node_modules

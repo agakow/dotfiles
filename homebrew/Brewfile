@@ -1,0 +1,59 @@
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/services'
+
+# -----------------
+brew 'coreutils'     # Basic file, shell and text manipulation utilities
+brew 'imagemagick'   # Command-line tool for image manipulation
+brew 'mas'           # Command line interface for the Mac App Store
+brew 'neovim'
+brew 'node'          # Node.js
+brew 'openssl'       # OpenSSL
+brew 'postgresql'    # PostgreSQL database
+brew 'rbenv'         # Ruby version manager
+brew 'readline'      # Edit command lines as they are typed in
+brew 'ruby-build'    # List of ruby versions for rbenv
+brew 'tree'          # Hierarchical view of file system
+brew 'wifi-password' # Get the wifi password you're currently connected to
+brew 'wget'          # Non-interactive network retriever
+brew 'zsh'
+# -----------------
+# work
+# -----------------
+brew 'icu4c'
+brew 'ffmpeg'
+brew 'graphviz'
+brew 'mediainfo'
+brew 'phantomjs'
+brew 'redis'
+
+# -----------------
+# Apps
+# -----------------
+cask 'atom'          # Text Editor
+cask 'dash'          # API Documentation Browser and Code Snippet Manager
+cask 'dbglass'       # GUI for local database
+cask 'docker'
+cask 'dropbox'
+cask 'firefox'
+cask 'flux'          # Adapt the color of your computer's display to the time of day
+cask 'google-chrome'
+cask 'iterm2'        # iTerm2 terminal
+cask 'ngrok'         # ngrok for exposing local ports to the outside world
+cask 'postman'
+cask 'slack'
+cask 'spectacle'
+cask 'spotify'
+cask 'vlc'
+
+# -----------------
+# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+# -----------------
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'qlimagesize'

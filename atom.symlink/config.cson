@@ -1,0 +1,29 @@
+"*":
+  core:
+    audioBeep: false
+    closeDeletedFileTabs: true
+    disabledPackages: [
+      "markdown-preview"
+    ]
+    hideVcsIgnoredPaths: false
+    projectHome: "/Users/agakowalczuk/Projects"
+    telemetryConsent: "no"
+  editor:
+    fontSize: 11
+    showIndentGuide: true
+    showInvisibles: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "ded4c460-1ff7-4063-ad2d-297b2bd2715b"
+  "git-blame":
+    columnWidth: 266
+  linter: {}
+  "linter-jshint":
+    esversion: 6
+  "linter-ui-default": {}
+  minimap: {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false

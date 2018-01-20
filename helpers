@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# helpers for displaying difference types of messages
+
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] › $1\n" # [ .. ] purple
+}
+
+user () {
+  printf "\r  [ \033[0;33m??\033[0m ] $1\n" # [ ?? ] white
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n" # [ OK ] green
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n" # [FAIL] red
+  echo ''
+  exit
+}
+
+# Ask user
+function ask() {
+  read -p "Do you want to $1? (y/N)" choice
+  case "$choice" in
+    y | Yes | yes ) echo "Yes"; exit;;
+    n | N | No | no) echo "No"; exit;;
+    * ) info "Invalid answer" && return;;
+  esac
+}

@@ -1,0 +1,13 @@
+# atom
+/atom.symlink/.apm
+/atom.symlink/.node-gyp
+/atom.symlink/compile-cache
+/atom.symlink/packages
+/atom.symlink/recovery
+/atom.symlink/storage
+/atom.symlink/blob-store
+/atom.symlink/themes
+
+# aws
+/aws.symlink/mfa.cfg
+/aws.symlink/credentials
