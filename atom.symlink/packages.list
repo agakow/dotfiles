@@ -1,9 +1,11 @@
 atom-beautify@0.30.9
 atom-elixir@0.2.3
+busy-signal@1.4.3
 file-icons@2.1.16
 git-blame@1.4.0
 hey-pane@1.1.0
 hyperclick@0.1.5
+intentions@1.1.5
 language-elixir@0.20.3
 language-elm@1.5.0
 language-erlang@3.2.0
@@ -11,6 +13,7 @@ language-gherkin@1.0.4
 linter@2.2.0
 linter-eslint@8.4.0
 linter-jshint@3.1.6
+linter-ui-default@1.6.10
 markdown-preview-enhanced@0.15.2
 multi-cursor@2.1.5
 platformio-ide-terminal@2.8.0
