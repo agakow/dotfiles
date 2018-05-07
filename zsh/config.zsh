@@ -41,17 +41,14 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # ----------------------------------------------------------------------------
 # aliases
 # ----------------------------------------------------------------------------
-# project shortcuts
-PROJECTS="$HOME/Projects"
-alias desk="$HOME/Desktop"
-alias dw="$HOME/Downloads"
-# rails
+# ruby/rails
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 alias railsc='bundle exec rails console'
 alias fs='foreman start'
 alias rubo='bundle exec rubocop'
-alias ruba='bundle exec rubocop -a'
+alias ruba='bundle exec rubocop -a' # autocorrect
+alias rubop='bundle exec rubocop -p' # parallel
 alias tea='RAILS_ENV=test bundle exec teaspoon'
 # git
 alias ga='git add'
@@ -69,6 +66,9 @@ alias ra='git rebase --abort'
 # docker
 alias dockpsql='docker run -t -d -p 5432:5432 --name postgres postgres'
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 # ----------------------------------------------------------------------------
 
 # Uncomment the following line to disable bi-weekly auto-update checks.

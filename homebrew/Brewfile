@@ -47,6 +47,7 @@ cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'vlc'
+cask 'kindle'
 
 # -----------------
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
