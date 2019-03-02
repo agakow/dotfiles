@@ -14,40 +14,34 @@ brew 'openssl'       # OpenSSL
 brew 'postgresql'    # PostgreSQL database
 brew 'rbenv'         # Ruby version manager
 brew 'readline'      # Edit command lines as they are typed in
+brew 'redis'
 brew 'ruby-build'    # List of ruby versions for rbenv
 brew 'tree'          # Hierarchical view of file system
 brew 'wifi-password' # Get the wifi password you're currently connected to
 brew 'wget'          # Non-interactive network retriever
 brew 'zsh'
-# -----------------
-# work
-# -----------------
-brew 'icu4c'
-brew 'ffmpeg'
-brew 'graphviz'
-brew 'mediainfo'
-brew 'phantomjs'
-brew 'redis'
 
 # -----------------
 # Apps
 # -----------------
-cask 'atom'          # Text Editor
+# cask 'atom'          # Text Editor
+cask 'authy-desktop'
 cask 'dash'          # API Documentation Browser and Code Snippet Manager
-cask 'dbglass'       # GUI for local database
+cask 'dbglass'       # GUI for local   database
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
 cask 'flux'          # Adapt the color of your computer's display to the time of day
 cask 'google-chrome'
 cask 'iterm2'        # iTerm2 terminal
+cask 'kindle'
 cask 'ngrok'         # ngrok for exposing local ports to the outside world
 cask 'postman'
 cask 'slack'
 cask 'spectacle'
 cask 'spotify'
-cask 'vlc'
-cask 'kindle'
+cask "sublime-text"
+cask 'vlc' 
 
 # -----------------
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
@@ -58,3 +52,9 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlimagesize'
+
+
+mas '1Password', id: 443987910
+mas 'Brightness Slider', id: 456624497
+mas 'LastPass', id: 926036361
+mas "Xcode", id: 497799835

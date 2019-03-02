@@ -22,7 +22,7 @@ fail () {
 
 # Ask user
 function ask() {
-  read -p "Do you want to $1? (y/N)" choice
+  read -p "$(user "Do you want to $1? (y/n)")" choice
   case "$choice" in
     y | Yes | yes ) echo "Yes"; exit;;
     n | N | No | no) echo "No"; exit;;
