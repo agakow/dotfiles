@@ -138,10 +138,35 @@ install_atom_packages() {
   fi
 }
 
+install_sublime_package() {
+  if [ "$(which subl)" ]
+    local sublime_dir="$HOME/Library/Application Support/Sublime Text 3"
+    local user_dir="$sublime_dir/Packages/User"
+    local package_control="$sublime_dir/Installed Packages/Package Control.sublime-package"
+  then
+    if [ ! -f "$package_control" ]
+    then
+      info "Downloading Package Control..."
+      wget "https://sublime.wbond.net/Package Control.sublime-package" -o "$package_control"
+    fi
+
+    info "Configuring desired packages..."
+    rm -f "$user_dir/Package Control.sublime-settings"
+    ln -s "$DOTFILES/sublime/Package Control.sublime-settings" "$user_dir/Package Control.sublime-settings"
+
+    info "Configuring User Settings..."
+    rm -f "$user_dir/Preferences.sublime-settings"
+    ln -s "$DOTFILES/sublime/Preferences.sublime-settings" "$user_dir/Preferences.sublime-settings"
+
+    success "Sublime packages and configuration complete"
+  fi
+}
+
 install_homebrew_and_download_apps # needs to run before shell change
-change_shell_to_zsh
-install_dotfiles
-install_atom_packages # needs to run after atom is installed
+# change_shell_to_zsh
+# install_dotfiles
+install_sublime_package
+# install_atom_packages # needs to run after atom is installed
 
 echo ''
 success 'All installed!'

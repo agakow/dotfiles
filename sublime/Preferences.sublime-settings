@@ -1,0 +1,31 @@
+{
+	"bold_folder_labels": true,
+	"create_window_at_startup": false,
+	"ensure_newline_at_eof_on_save": false,
+	"file_exclude_patterns":
+	[
+		"*.byebug_history",
+		"*.DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"log",
+		"node_modules",
+		"public",
+		"tmp"
+	],
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"ignore_whitespace_on_current_line": true,
+	"open_files_in_new_window": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
