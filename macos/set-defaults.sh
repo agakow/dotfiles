@@ -154,7 +154,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to the ~/Desktop/Screenshots
+# Save screenshots to the ~/Desktop/screenshots
 defaults write com.apple.screencapture location -string "$HOME/Desktop/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
