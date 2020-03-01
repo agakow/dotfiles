@@ -1,6 +1,6 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
 
@@ -25,7 +25,7 @@ brew 'zsh'
 # Apps
 # -----------------
 # cask 'atom'
-cask 'authy-desktop'
+cask 'authy'
 cask 'dbglass'       # GUI for local   database
 cask 'docker'
 cask 'dropbox'
