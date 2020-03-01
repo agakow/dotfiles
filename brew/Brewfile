@@ -24,24 +24,21 @@ brew 'zsh'
 # -----------------
 # Apps
 # -----------------
-# cask 'atom'          # Text Editor
+# cask 'atom'
 cask 'authy-desktop'
-cask 'dash'          # API Documentation Browser and Code Snippet Manager
 cask 'dbglass'       # GUI for local   database
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
-cask 'flux'          # Adapt the color of your computer's display to the time of day
 cask 'google-chrome'
 cask 'iterm2'        # iTerm2 terminal
-cask 'kindle'
 cask 'ngrok'         # ngrok for exposing local ports to the outside world
 cask 'postman'
 cask 'slack'
-cask 'spectacle'
 cask 'spotify'
 cask "sublime-text"
-cask 'vlc' 
+cask 'vlc'
+cask 'lastpass'
 
 # -----------------
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
@@ -52,9 +49,3 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlimagesize'
-
-
-mas '1Password', id: 443987910
-mas 'Brightness Slider', id: 456624497
-mas 'LastPass', id: 926036361
-mas "Xcode", id: 497799835

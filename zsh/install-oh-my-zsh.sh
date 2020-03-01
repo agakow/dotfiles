@@ -1,14 +1,14 @@
 #!/bin/sh
-#
+
 # Oh my zsh
 ZSH=~/.oh-my-zsh
-source $DOTFILES/helpers
 
 if ! [ -d $ZSH ]
 then
-  info 'cloning oh-my-zsh'
+  echo 'Clonindg oh-my-zsh'
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
-      fail "Error: git clone of oh-my-zsh repo failed\n"
+      echo "!! Error: cloning oh-my-zsh repo failed !!"
       exit 1
     }
+  echo '*** DONE ***'
 fi

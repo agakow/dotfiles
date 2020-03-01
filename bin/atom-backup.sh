@@ -8,4 +8,4 @@
 
 set -e
 
-apm list --installed --bare > $DOTFILES/atom.symlink/packages.list
+apm list --installed --bare > $DOTFILES/atom/packages.list

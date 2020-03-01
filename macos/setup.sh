@@ -1,19 +1,6 @@
 #!/bin/bash
 set -e # Abort on error
 
-DOTFILES=$HOME/Projects/dotfiles
-source $DOTFILES/helpers
-
-#
-# Sets OS X defaults. My sources:
-# - https://github.com/nicksp/dotfiles/blob/master/osx/set-defaults.sh
-# - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
-
-# Set computer name
-# COMPUTERNAME="Aga Kowalczuk's MBP"
-# HOSTNAME='mbp'
-# LOCALHOSTNAME='mbp'
-
 # Ask for the administrator password upfront
 sudo -v
 
@@ -25,10 +12,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-#sudo scutil --set ComputerName $COMPUTERNAME
-#sudo scutil --set HostName $HOSTNAME
-#sudo scutil --set LocalHostName $LOCALHOSTNAME
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $LOCALHOSTNAME
+read NEW_NAME
+sudo scutil --set ComputerName "${NEW_NAME}"
+sudo scutil --set LocalHostName "${NEW_NAME}"
+sudo scutil --set HostName "${NEW_NAME}"
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -151,8 +138,8 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 ###############################################################################
 
 # Require password immediately after sleep or screen saver.
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the ~/Desktop/screenshots
 defaults write com.apple.screencapture location -string "$HOME/Desktop/screenshots"
@@ -252,21 +239,6 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
-# Spectacle.app
-###############################################################################
 
-# Set up my preferred keyboard shortcuts
-cp -r spectacle/shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
-
-###############################################################################
-
-success "Success! Defaults are set"
-info "Some changes will not take effect until you reboot your machine"
-
-# See if the user wants to reboot.
-if [[ "Yes" == $(ask "reboot your computer now") ]]
-then
-  info "Rebooting"
-  sudo reboot
-  exit 0
-fi
+echo "Some changes will not take effect until you reboot your machine"
+echo "***DONE!***"

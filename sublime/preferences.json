@@ -18,12 +18,12 @@
 		"public",
 		"tmp"
 	],
-	"font_size": 12,
+	"font_size": 14,
+	"ignore_whitespace_on_current_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"ignore_whitespace_on_current_line": true,
 	"open_files_in_new_window": false,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,

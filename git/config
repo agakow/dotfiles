@@ -30,6 +30,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = agakow
-	email = kowalczuk.a93@gmail.com
