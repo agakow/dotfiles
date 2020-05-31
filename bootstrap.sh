@@ -20,6 +20,7 @@ popd
 .dotfiles/macos/setup.sh
 .dotfiles/zsh/setup.sh
 .dotfiles/ruby/setup.sh
+.dotfiles/vim/setup.sh
 
 echo ''
 echo '*** SETUP COMPLETE ***'

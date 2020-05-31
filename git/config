@@ -2,11 +2,13 @@
 	helper = osxkeychain
 [alias]
   amend = commit --amend
-  fixup = commit --fixup
+  fixup = commit --fixup --autosquash
   unstage = reset HEAD --
   br = branch
   co = checkout
   lo = log --pretty=oneline --abbrev-commit --graph --decorate
+  wip = commit -m "WIP"
+  cob = checkout -b
 [core]
   excludesfile = ~/.gitignore
 [branch]

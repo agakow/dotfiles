@@ -3,49 +3,55 @@ cask_args appdir: '/Applications'
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
+tap 'ivandokov/homebrew-contrib'
 
-# -----------------
+# Tools
+brew 'autojump'	     # A scd command that learns - easily navigate directories from the command line
 brew 'coreutils'     # Basic file, shell and text manipulation utilities
-brew 'imagemagick'   # Command-line tool for image manipulation
+brew 'go'
+# brew 'imagemagick'   # Command-line tool for image manipulation
 brew 'mas'           # Command line interface for the Mac App Store
 brew 'neovim'
-brew 'node'          # Node.js
-brew 'openssl'       # OpenSSL
-brew 'postgresql'    # PostgreSQL database
+brew 'nvm'
+brew 'phockup'		 # Media sorting tool to organize photos and videos from your camera in folders by year, month and day
 brew 'rbenv'         # Ruby version manager
 brew 'readline'      # Edit command lines as they are typed in
 brew 'redis'
 brew 'ruby-build'    # List of ruby versions for rbenv
 brew 'tree'          # Hierarchical view of file system
-brew 'wifi-password' # Get the wifi password you're currently connected to
 brew 'wget'          # Non-interactive network retriever
+brew 'yarn'
 brew 'zsh'
 
-# -----------------
 # Apps
-# -----------------
 # cask 'atom'
+cask 'alfred'
 cask 'authy'
-cask 'dbglass'       # GUI for local   database
+# cask 'dbglass'       # GUI for local   database
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
+cask 'github-desktop'
 cask 'google-chrome'
 cask 'iterm2'        # iTerm2 terminal
+cask 'lastpass'
 cask 'ngrok'         # ngrok for exposing local ports to the outside world
+cask 'nordvpn'
 cask 'postman'
+cask 'raspberry-pi-imager'
 cask 'slack'
 cask 'spotify'
+cask 'standard-notes'
 cask "sublime-text"
 cask 'vlc'
-cask 'lastpass'
+cask 'whatsapp'
 
-# -----------------
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-# -----------------
 cask 'qlcolorcode'
 cask 'qlstephen'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
-cask 'qlimagesize'
+
+# App store apps
+mas install '456624497' # Brightness slider
