@@ -52,6 +52,3 @@ cask 'qlstephen'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
-
-# App store apps
-mas install '456624497' # Brightness slider
