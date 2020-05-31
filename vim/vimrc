@@ -1,0 +1,142 @@
+" Don't try to be vi compatible
+set nocompatible
+
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+let mapleader = ","
+
+" Load plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'rhysd/clever-f.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+" Turn on syntax highlighting
+syntax on
+
+" For plugins to load correctly
+filetype plugin indent on
+
+" Security
+set modelines=0
+
+" Show line numbers
+set number
+
+" Show file stats
+set ruler
+
+" Blink cursor on error instead of beeping
+set visualbell
+
+" Encoding
+set encoding=utf-8
+
+" Whitespace
+set wrap
+set textwidth=80
+set formatoptions+=a
+set tabstop=2       "A tab is 2 spaces
+set shiftwidth=2    "An indent is 2 spaces
+set softtabstop=2   "Insert 2 spaces when tab is pressed
+set expandtab       "Always uses spaces instead of tabs
+set noshiftround
+set smarttab        "Indent instead of tab at start of line
+
+" Use one space, not two, after punctuation.
+set nojoinspaces
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:> " use % to jump between pairs
+runtime! macros/matchit.vim
+
+" Allow hidden buffers
+set hidden
+
+" Mouse support
+set mouse=a
+
+" Rendering
+set ttyfast
+
+" Status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/=''<cr> " clear search
+
+" Command line auto complete
+set wildmenu
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Formatting
+map <leader>q gqip
+
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+
+" Persistent Undo
+set undofile                " Save undo's after file closes
+set undodir=~/.vim/undo     " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+" Color scheme (terminal)
+set t_Co=256
+set background=dark
+colorscheme Tomorrow-Night-Eighties
+
+" Nerdtree
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+
+" Remapping Keys
+imap <leader><leader> <esc>
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nnoremap ; :
+vnoremap ; :
+
+" Undo in insert mode
+inoremap <C-U> <C-G>u<C-U>
+
+map <leader>s :source ~/.vimrc<CR>
+
+" Nicer split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-left> <C-w>h
+nnoremap <C-down> <C-w>j
+nnoremap <C-up> <C-w>k
+nnoremap <C-right> <C-w>l
+
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
