@@ -22,5 +22,8 @@ popd
 .dotfiles/ruby/setup.sh
 .dotfiles/vim/setup.sh
 
+mkdir -p ~/Projects/go/src/
+mkdir -p ~/Projects/go/bin/
+
 echo ''
 echo '*** SETUP COMPLETE ***'
