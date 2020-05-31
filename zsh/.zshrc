@@ -48,6 +48,11 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # path
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$HOME/bin:$PATH"
