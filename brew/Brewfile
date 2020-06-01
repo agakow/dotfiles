@@ -31,7 +31,7 @@ cask 'authy'
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
-cask 'github-desktop'
+cask 'github'
 cask 'google-chrome'
 cask 'iterm2'        # iTerm2 terminal
 cask 'lastpass'
