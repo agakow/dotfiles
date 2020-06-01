@@ -4,21 +4,22 @@ cd $(dirname $0)
 
 set -e
 
+echo Sublime setup
+
 if [ "$(which subl)" ]
-    local sublime_dir="~/Library/Application Support/Sublime Text 3"
-    local user_dir="$sublime_dir/Packages/User"
-    local package_control="$sublime_dir/Installed Packages/Package Control.sublime-package"
+    SUBLIME_DIR="$HOME/Library/Application Support/Sublime Text 3"
+    USER_DIR="$SUBLIME_DIR/Packages/User"
+    PACKAGE_CONTROL="$SUBLIME_DIR/Installed Packages/Package Control.sublime-package"
 then
-  if [ ! -f "$package_control" ]
-  then
+  if [ ! -f "$PACKAGE_CONTROL" ]; then
     echo "Downloading sublime package control..."
-    wget "https://sublime.wbond.net/Package Control.sublime-package" -o $package_control
+    subl --command install_package_control
     echo "*** DONE ***"
   fi
 
   echo 'Setting up sublime packages & preferences...'
-  cp packages.json $user_dir/Package Control.sublime-settings
-  cp preferences.json $user_dir/Preferences.sublime-settings
+  cp packages.json $USER_DIR/Package Control.sublime-settings
+  cp preferences.json $USER_DIR/Preferences.sublime-settings
 
   echo "*** DONE ***"
 fi

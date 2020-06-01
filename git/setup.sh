@@ -4,7 +4,7 @@ cd $(dirname $0)
 
 set -e
 
-echo "Git setup"
+echo Git setup
 
 cp config ~/.gitconfig
 cp ignore ~/.gitignore

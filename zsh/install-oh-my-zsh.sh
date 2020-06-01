@@ -5,7 +5,7 @@ ZSH=~/.oh-my-zsh
 
 if ! [ -d $ZSH ]
 then
-  echo 'Clonindg oh-my-zsh'
+  echo 'Installing oh-my-zsh'
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
       echo "!! Error: cloning oh-my-zsh repo failed !!"
       exit 1

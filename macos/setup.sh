@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e # Abort on error
 
+echo MacOs setup
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -14,9 +16,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set computer name (as done via System Preferences → Sharing)
 echo 'Computer name:'
 read NEW_NAME
-sudo scutil --set ComputerName "${NEW_NAME}"
-sudo scutil --set LocalHostName "${NEW_NAME}"
-sudo scutil --set HostName "${NEW_NAME}"
+if [[ NEW_NAME != "" || NEW_NAME != "\n" ]]; then
+	sudo scutil --set ComputerName "${NEW_NAME}"
+	sudo scutil --set LocalHostName "${NEW_NAME}"
+	sudo scutil --set HostName "${NEW_NAME}"
+fi
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -27,8 +34,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Use AirDrop over every interface.
@@ -40,6 +46,19 @@ defaults write com.apple.swipescrolldirection -bool false
 
 # Disable opening and closing window animations
 defaults write NSAutomaticWindowAnimationsEnabled -bool false
+
+###############################################################################
+# Menu
+###############################################################################
+
+# Show bluetooth, wifi, volume, battery (with percentage) and clock
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
+defaults write com.apple.systemuiserver menuExtras -array \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu" \
+	"/System/Library/CoreServices/Menu Extras/Volume.menu"
 
 ###############################################################################
 # Safari
@@ -79,7 +98,7 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 ###############################################################################
 
 # Disable Swipe controls for Google Chrome
-defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool false
 
 ###############################################################################
 # Mail
@@ -104,12 +123,6 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 ###############################################################################
 # Interfaces: trackpad, mouse, keyboard, bluetooth, etc.
 ###############################################################################
-
-# Trackpad: map bottom right corner of Apple trackpad to right-click.
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write -g com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write com.apple.trackpad.enableSecondaryClick -bool true
 
 # Set a really fast keyboard repeat rate.
 defaults write -g KeyRepeat -int 2
@@ -148,7 +161,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # defaults write com.apple.screensaver askForPassword -int 1
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to the ~/Desktop/screenshots
+# Save screenshots to ~/Desktop/screenshots
 defaults write com.apple.screencapture location -string "$HOME/Desktop/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -170,7 +183,7 @@ chflags nohidden ~/Library
 # Show icons for hard drives, servers, and removable media on the desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
 # Always open everything in Finder's column view.
@@ -216,6 +229,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
+# Do not show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
 # Automatically hide and show the Dock
 # defaults write com.apple.dock autohide -bool true
 
@@ -246,6 +262,9 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+killall SystemUIServer
+killall Dock
+killall Finder
 
 echo "Some changes will not take effect until you reboot your machine"
 echo "***DONE!***"

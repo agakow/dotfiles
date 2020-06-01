@@ -4,6 +4,8 @@ cd $(dirname $0)
 
 set -e
 
+echo Homebrew setup
+
 # Only install Homebrew if not already installed
 if test ! $(which brew)
 then
