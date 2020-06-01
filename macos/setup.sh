@@ -35,6 +35,12 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # undo using defaults write com.apple.NetworkBrowser BrowseAllInterfaces 0
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
+# Disable ‘natural’ scrolling
+defaults write com.apple.swipescrolldirection -bool false
+
+# Disable opening and closing window animations
+defaults write NSAutomaticWindowAnimationsEnabled -bool false
+
 ###############################################################################
 # Safari
 ###############################################################################
