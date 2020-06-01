@@ -5,6 +5,7 @@ set -e
 
 echo SSH setup
 
+mkdir -p ~/.ssh
 cat config >> ~/.ssh/config
 
 echo "Email:"

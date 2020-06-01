@@ -12,6 +12,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
+echo 'Computer name:'
 read NEW_NAME
 sudo scutil --set ComputerName "${NEW_NAME}"
 sudo scutil --set LocalHostName "${NEW_NAME}"
