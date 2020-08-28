@@ -7,7 +7,7 @@ set -e
 echo "Zsh setup"
 
 # Install oh my ZSH
-install-oh-my-zsh.sh
+./install-oh-my-zsh.sh
 
 cp .zshrc ~/.zshrc
 echo "*** DONE ***"

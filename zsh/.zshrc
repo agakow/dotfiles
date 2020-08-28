@@ -7,6 +7,8 @@ HISTFILE="~/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 if [[ -a ~/.localrc ]]
@@ -18,6 +20,12 @@ fi
 if (( $+commands[rbenv] ))
 then
   eval "$(rbenv init -)"
+fi
+
+## jenv
+if (( $+commands[jenv] ))
+then
+  eval "$(jenv init -)"
 fi
 
 ## autojump
@@ -59,6 +67,7 @@ PATH="$HOME/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
 PATH="$DOTFILES/bin:$PATH"
 PATH="$HOME/.rbenv/bin:/.rbenv/shims:$PATH"
+PATH="$HOME/.jenv/bin:$PATH"
 export PATH
 
 ## zsh options
@@ -161,3 +170,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
+
+# Key Bindings
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
