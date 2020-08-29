@@ -264,6 +264,24 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# NordVpn
+###############################################################################
+
+defaults write com.nordvpn.osx SUAutomaticallyUpdate -bool true
+defaults write com.nordvpn.osx SUEnableAutomaticChecks -bool true
+defaults write com.nordvpn.osx SUSendProfileInfo -bool false
+defaults write com.nordvpn.osx SUEnableAutomaticChecks -bool true
+defaults write com.nordvpn.osx appIcon -bool true
+defaults write com.nordvpn.osx automaticUpdates -bool true
+defaults write com.nordvpn.osx appDataCollectionAccepted -bool true
+defaults write com.nordvpn.osx helpUsImprove -bool false
+
+NORDVPN="$HOME/Library/Preferences/com.nordvpn.osx.plist"
+/usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:firstItem string 'United Kingdom'" $NORDVPN
+/usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:secondItem string 'Recommended server'" $NORDVPN
+/usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:type string 'country'" $NORDVPN
+
+###############################################################################
 killall SystemUIServer
 killall Dock
 killall Finder
