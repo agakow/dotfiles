@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 set -e
-echo 'Starting work brew bundle...'
+echo 'Starting java brew bundle...'
 brew tap Homebrew/bundle
-brew bundle --file Brewfile.work
+brew bundle --file Brewfile.java
 echo '*** DONE ***'

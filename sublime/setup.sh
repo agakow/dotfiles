@@ -18,8 +18,8 @@ then
   fi
 
   echo 'Setting up sublime packages & preferences...'
-  cp packages.json $USER_DIR/Package Control.sublime-settings
-  cp preferences.json $USER_DIR/Preferences.sublime-settings
+  cp packages.json "$USER_DIR/Package Control.sublime-settings"
+  cp preferences.json "$USER_DIR/Preferences.sublime-settings"
 
   echo "*** DONE ***"
 fi

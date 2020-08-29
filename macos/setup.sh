@@ -14,25 +14,25 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-echo 'Computer name:'
-read NEW_NAME
-if [[ NEW_NAME != "" || NEW_NAME != "\n" ]]; then
-	sudo scutil --set ComputerName "${NEW_NAME}"
-	sudo scutil --set LocalHostName "${NEW_NAME}"
-	sudo scutil --set HostName "${NEW_NAME}"
-fi
+# echo 'Computer name:'
+# read NEW_NAME
+# if [[ NEW_NAME != "" || NEW_NAME != "\n" ]]; then
+# 	sudo scutil --set ComputerName "${NEW_NAME}"
+# 	sudo scutil --set LocalHostName "${NEW_NAME}"
+# 	sudo scutil --set HostName "${NEW_NAME}"
+# fi
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
 # Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
@@ -42,10 +42,10 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # Disable ‘natural’ scrolling
-defaults write com.apple.swipescrolldirection -bool false
+defaults write -g com.apple.swipescrolldirection -bool false
 
 # Disable opening and closing window animations
-defaults write NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
 ###############################################################################
 # Menu
@@ -161,11 +161,13 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # defaults write com.apple.screensaver askForPassword -int 1
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+SCREENSHOTS="$HOME/Desktop/screenshots"
+mkdir -p $SCREENSHOTS
 # Save screenshots to ~/Desktop/screenshots
-defaults write com.apple.screencapture location -string "$HOME/Desktop/screenshots"
+defaults write com.apple.screencapture location -string $SCREENSHOTS
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string "jpg"
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -192,9 +194,6 @@ defaults write com.apple.finder FXPreferredViewStyle Nlsv
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Show file extensions by default
-defaults write -g AppleShowAllExtensions -bool true
-
 # Disable the warning when changing file extensions
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
@@ -209,6 +208,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Show file extensions by default
+defaults write -g AppleShowAllExtensions -bool true
 
 # Disable auto-correct
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
