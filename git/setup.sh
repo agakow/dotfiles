@@ -9,18 +9,20 @@ echo "*** GIT SETUP: START ***"
 cp config ~/.gitconfig
 cp ignore ~/.gitignore
 
-echo "Name:"
-read name
+echo -n "NAME: "
+read name < /dev/tty
 
-echo "Email:"
-read email
+echo -n "EMAIL: "
+read email < /dev/tty
 
 git config --global user.email "$email"
 git config --global user.name "$name"
 
-echo "***"
-git config --get user.email
+echo "*** CHECK CONFIG ***"
+echo -n "NAME: "
 git config --get user.name
+echo -n "EMAIL: "
+git config --get user.email
 echo "***"
 
 echo "*** GIT SETUP: DONE ***"
