@@ -16,11 +16,13 @@ git remote rm origin
 git remote add origin git@github.com:agakow/dotfiles.git
 popd
 
-.dotfiles/git/setup.sh
-.dotfiles/macos/setup.sh
 .dotfiles/zsh/setup.sh
-# .dotfiles/ruby/setup.sh
+.dotfiles/macos/setup.sh
 .dotfiles/vim/setup.sh
+.dotfiles/sublime/setup.sh
+sh -c .dotfiles/git/setup.sh
+
+# .dotfiles/ruby/setup.sh
 
 # mkdir -p ~/Projects/go/src/
 # mkdir -p ~/Projects/go/bin/

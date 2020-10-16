@@ -3,7 +3,14 @@
 cd $(dirname $0)
 
 set -e
-echo 'Starting java brew bundle...'
+
+echo "*** JAVA SETUP: START ***"
+
 brew tap Homebrew/bundle
 brew bundle --file Brewfile.java
-echo '*** DONE ***'
+
+mkdir -p ~/.jenv/versions
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+jenv global 11.0
+
+echo '*** JAVA SETUP: DONE ***'

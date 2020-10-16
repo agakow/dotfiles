@@ -4,17 +4,17 @@ cd $(dirname $0)
 
 set -e
 
-echo Homebrew setup
+echo "*** HOMEBREW SETUP: START ***"
 
 # Only install Homebrew if not already installed
 if test ! $(which brew)
 then
-  echo 'Installing Homebrew...'
+  echo "*** INSTALLING HOMEBREW: START ***"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  echo '*** DONE ***'
+  echo '*** INSTALLING HOMEBREW: DONE ***'
 fi
 
-echo 'Starting brew bundle...'
+echo "*** BREW BUNDLE ***"
 brew tap Homebrew/bundle
 brew bundle
-echo '*** DONE ***'
+echo '*** HOMEBREW SETUP: DONE ***'

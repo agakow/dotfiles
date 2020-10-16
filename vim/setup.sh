@@ -4,6 +4,8 @@ cd $(dirname $0)
 
 set -e
 
-echo Vim setup
+echo "*** VIM SETUP: START ***"
 
 cp vimrc ~/.vimrc
+
+echo "*** VIM SETUP: DONE ***"

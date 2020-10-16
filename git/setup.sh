@@ -4,7 +4,7 @@ cd $(dirname $0)
 
 set -e
 
-echo Git setup
+echo "*** GIT SETUP: START ***"
 
 cp config ~/.gitconfig
 cp ignore ~/.gitignore
@@ -15,7 +15,12 @@ read name
 echo "Email:"
 read email
 
-git config --global user.email $email
-git config --global user.name $name
+git config --global user.email "$email"
+git config --global user.name "$name"
 
-echo "*** DONE ***"
+echo "***"
+git config --get user.email
+git config --get user.name
+echo "***"
+
+echo "*** GIT SETUP: DONE ***"

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e # Abort on error
 
-echo MacOs setup
+echo "*** MACOS SETUP: START ***"
 
 # Ask for the administrator password upfront
 sudo -v
@@ -277,6 +277,7 @@ defaults write com.nordvpn.osx appDataCollectionAccepted -bool true
 defaults write com.nordvpn.osx helpUsImprove -bool false
 
 NORDVPN="$HOME/Library/Preferences/com.nordvpn.osx.plist"
+/usr/libexec/PlistBuddy -c 'Delete :connectOnLaunch:openvpn_udp' $NORDVPN
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:firstItem string 'United Kingdom'" $NORDVPN
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:secondItem string 'Recommended server'" $NORDVPN
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:type string 'country'" $NORDVPN
@@ -287,4 +288,4 @@ killall Dock
 killall Finder
 
 echo "Some changes will not take effect until you reboot your machine"
-echo "***DONE!***"
+echo "*** MACOS SETUP: DONE ***"

@@ -3,7 +3,7 @@
 cd $(dirname $0)
 set -e
 
-echo SSH setup
+echo "*** SSH SETUP: START ***"
 
 mkdir -p ~/.ssh
 cat config >> ~/.ssh/config
@@ -18,4 +18,6 @@ eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 
 pbcopy < ~/.ssh/id_rsa.pub
+
+echo "*** SSH SETUP: DONE ***"
 echo "Copied public key to clipboard"

@@ -4,6 +4,8 @@ cd $(dirname $0)
 
 set -e
 
-echo Ruby setup
+echo "*** RUBY SETUP: START ***"
 
 cp gemrc ~/.gemrc
+
+echo "*** RUBY SETUP: DONE ***"
