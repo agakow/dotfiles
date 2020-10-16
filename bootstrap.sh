@@ -19,11 +19,11 @@ popd
 .dotfiles/git/setup.sh
 .dotfiles/macos/setup.sh
 .dotfiles/zsh/setup.sh
-.dotfiles/ruby/setup.sh
+# .dotfiles/ruby/setup.sh
 .dotfiles/vim/setup.sh
 
-mkdir -p ~/Projects/go/src/
-mkdir -p ~/Projects/go/bin/
+# mkdir -p ~/Projects/go/src/
+# mkdir -p ~/Projects/go/bin/
 
 echo ''
 echo '*** SETUP COMPLETE ***'
