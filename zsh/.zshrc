@@ -3,8 +3,8 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="awesomepanda"
-HISTFILE="~/.zsh_history"
-HISTSIZE=10000
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
 SAVEHIST=10000
 
 ZSH_DISABLE_COMPFIX=true
@@ -17,16 +17,10 @@ then
 fi
 
 ## rbenv
-if (( $+commands[rbenv] ))
-then
-  eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## jenv
-if (( $+commands[jenv] ))
-then
-  eval "$(jenv init -)"
-fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 ## autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -44,7 +38,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="/usr/local/bin/nvim"
 
 # ruby
-export RBENV_ROOT="/usr/local/var/rbenv"
+export RBENV_ROOT="$HOME/.rbenv"
 
 # postgres
 export PGHOST=localhost
@@ -66,7 +60,7 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$HOME/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
 PATH="$DOTFILES/bin:$PATH"
-PATH="$HOME/.rbenv/bin:/.rbenv/shims:$PATH"
+PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 PATH="$HOME/.jenv/bin:$PATH"
 export PATH
 
@@ -129,9 +123,11 @@ setopt no_list_beep
 
 # History
 # Allow multiple terminal sessions to all append to one zsh command history
-setopt append_history
+# setopt append_history
 # save timestamp of command and duration
 setopt extended_history
+# Share history across terminals
+setopt sharehistory
 # Add commands as they are typed, don't wait until shell exit
 setopt inc_append_history
 # when trimming history, lose oldest duplicates first
