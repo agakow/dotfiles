@@ -21,7 +21,7 @@ popd
 .dotfiles/vim/setup.sh
 .dotfiles/sublime/setup.sh
 .dotfiles/git/setup.sh
-sh -c .dotfiles/ssh/setup.sh
+.dotfiles/ssh/setup.sh
 # .dotfiles/ruby/setup.sh
 
 # mkdir -p ~/Projects/go/src/
