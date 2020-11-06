@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e # Abort on error
+# set -e # Abort on error
 
 echo "*** MACOS SETUP: START ***"
 
@@ -277,7 +277,7 @@ defaults write com.nordvpn.osx appDataCollectionAccepted -bool true
 defaults write com.nordvpn.osx helpUsImprove -bool false
 
 NORDVPN="$HOME/Library/Preferences/com.nordvpn.osx.plist"
-/usr/libexec/PlistBuddy -c 'Delete :connectOnLaunch:openvpn_udp' $NORDVPN
+/usr/libexec/PlistBuddy -c 'Delete :connectOnLaunch:openvpn_udp' $NORDVPN >/dev/null 2>&1
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:firstItem string 'United Kingdom'" $NORDVPN
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:secondItem string 'Recommended server'" $NORDVPN
 /usr/libexec/PlistBuddy -c "Add :connectOnLaunch:openvpn_udp:type string 'country'" $NORDVPN
