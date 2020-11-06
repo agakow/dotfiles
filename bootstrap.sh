@@ -20,8 +20,8 @@ popd
 .dotfiles/macos/setup.sh
 .dotfiles/vim/setup.sh
 .dotfiles/sublime/setup.sh
-sh -c .dotfiles/git/setup.sh
-
+.dotfiles/git/setup.sh
+.dotfiles/ssh/setup.sh
 # .dotfiles/ruby/setup.sh
 
 # mkdir -p ~/Projects/go/src/
