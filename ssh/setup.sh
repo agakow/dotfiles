@@ -8,8 +8,8 @@ echo "*** SSH SETUP: START ***"
 mkdir -p ~/.ssh
 cat config >> ~/.ssh/config
 
-echo "Email:"
-read email
+echo -n "EMAIL: "
+read email < /dev/tty
 
 ssh-keygen -t rsa -b 4096 -C $email
 
