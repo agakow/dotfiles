@@ -15,6 +15,5 @@ then
 fi
 
 echo "*** BREW BUNDLE ***"
-brew tap Homebrew/bundle
-brew bundle
+brew bundle || true
 echo '*** HOMEBREW SETUP: DONE ***'
