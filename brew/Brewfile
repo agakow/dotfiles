@@ -8,12 +8,12 @@ tap 'homebrew/services'
 brew 'zsh'
 brew 'autojump'      # A scd command that learns - easily navigate directories from the command line
 brew 'coreutils'     # Basic file, shell and text manipulation utilities
-brew 'neovim'
-brew 'nvm'
-brew 'readline'      # Edit command lines as they are typed in
-brew 'tree'          # Hierarchical view of file system
+# brew 'neovim'
+# brew 'nvm'
+# brew 'readline'      # Edit command lines as they are typed in
+# brew 'tree'          # Hierarchical view of file system
 brew 'wget'          # Non-interactive network retriever
-brew 'yarn'
+# brew 'yarn'
 brew 'mas'           # Command line interface for the Mac App Store
 
 # brew 'redis'
@@ -28,16 +28,16 @@ brew 'mas'           # Command line interface for the Mac App Store
 # Apps
 cask 'alfred'
 cask 'authy'
-cask 'docker'
-cask 'dropbox'
-cask 'github'
+# cask 'docker'
+# cask 'dropbox'
+# cask 'github'
 cask 'google-chrome'
 cask 'iterm2'        # iTerm2 terminal
 cask 'slack'
 cask 'spotify'
 cask 'standard-notes'
 cask "sublime-text"
-cask 'postman'
+# cask 'postman'
 cask 'nordvpn'
 # cask 'atom'
 # cask 'ngrok'         # ngrok for exposing local ports to the outside world
